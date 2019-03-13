@@ -38,7 +38,8 @@ node {
 
             input_result = input message: 'input branch name for this job', ok: 'ok', parameters: [
                 booleanParam(name: 'install', defaultValue: false),
-                booleanParam(name: 'deploy', defaultValue: true),
+                booleanParam(name: 'deploy', defaultValue: true)
+            ]
         }
         
         stage('Checkout'){
