@@ -1,0 +1,7 @@
+{
+  "apps": [{
+    "name": "server",
+    "cwd": "server",
+    "script": "./build/main.js"
+  }]
+}

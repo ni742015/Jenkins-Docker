@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "registryName": "ccr.ccs.tencentyun.com/yohann/demo",
+  "env": {
+    "test": {
+      "credentialsId": "ssh-test",
+      "host": "123.206.25.28"
+    },
+    "pro": {
+      "credentialsId": "ssh-test",
+      "host": "123.206.25.28"
+    }
+  }
+}
