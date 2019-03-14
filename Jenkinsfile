@@ -36,8 +36,9 @@ node {
         stage('config') {
             echo "Branch: ${env.BRANCH_NAME}, Environment: ${env.PRO_ENV}"
 
-            input_result = input message: 'input branch name for this job', ok: 'ok', parameters: [
+            input_result = input message: 'Check Tasks', ok: 'ok', parameters: [
                 booleanParam(name: 'install', defaultValue: false),
+                booleanParam(name: 'test', defaultValue: true),
                 booleanParam(name: 'deploy', defaultValue: true)
             ]
         }
@@ -59,6 +60,14 @@ node {
                 docker.image('node:9.6.0').inside {
                     sh 'node -v'
                     sh 'sh ./scripts/install.sh'
+                }
+            }
+        }
+
+        stage('Test'){
+            if(input_result.test) {
+                docker.image('node:9.6.0').inside {
+                    sh 'sh ./scripts/test.sh'
                 }
             }
         }

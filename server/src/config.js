@@ -15,8 +15,9 @@ const baseCfg = {
     jwt: {
         secret: 'bus',
         excludeUrls: [
+            '/api/user/register',
             /\/user\/login/,
-            {url: '/api/user/register', methods: ['POST']}
+            {url: /\user$/, methods: ['GET']}
         ]
     }
 }
@@ -30,4 +31,4 @@ const cfg = {
   },
 }
 
-export default Object.assign(baseCfg, cfg[process.env.PRO_ENV] || {})
+module.exports = Object.assign(baseCfg, cfg[process.env.PRO_ENV] || {})

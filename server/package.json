@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "scripts": {
     "start": "node ./build/main.js",
+    "test": "mocha ./test/user",
     "dev": "bus dev",
     "build": "bus build"
   },
@@ -13,6 +14,8 @@
   },
   "gitHead": "e25aa2020309c51be2b6bf9dc0b1ee6ad305a068",
   "devDependencies": {
-    "babel-plugin-transform-remove-console": "^6.9.4"
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "mocha": "^6.0.2",
+    "supertest": "^4.0.0"
   }
 }
