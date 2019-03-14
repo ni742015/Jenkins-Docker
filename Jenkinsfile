@@ -56,7 +56,7 @@ node {
 
         stage('Install'){
             if(input_result.install) {
-                docker.image('node:10.15.0').inside {
+                docker.image('node:9.6.0').inside {
                     sh 'node -v'
                     sh 'sh ./scripts/install.sh'
                 }
@@ -67,7 +67,7 @@ node {
             if(input_result.deploy) {
                 def customImage = docker.build(imageName, "--build-arg PRO_ENV=${env.PRO_ENV} .")
 
-                docker.withRegistry("https://${registryName}", 'docker-registry') {
+                docker.withRegistry("https://${registryName}", 'docker-demo') {
                     /* Push the container to the custom Registry */
                     customImage.push()
                 }

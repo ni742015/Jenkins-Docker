@@ -1,11 +1,9 @@
-FROM node:10.15.0
+FROM node:9.6.0
 
 RUN apt-get update
 RUN apt-get install vim -y
 
-RUN npm install -g yarn --registry=https://registry.npm.taobao.org
-RUN npm config set registry https://registry.npm.taobao.org
-RUN yarn global add pm2
+RUN npm install -g pm2 --registry=https://registry.npm.taobao.org
 
 ARG PRO_ENV=test
 ENV PRO_ENV=$PRO_ENV
