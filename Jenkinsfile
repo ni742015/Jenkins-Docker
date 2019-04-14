@@ -100,7 +100,7 @@ node {
                     }
 
                     try {
-                        sshCommand remote: remote, command: "docker rm -f yida"
+                        sshCommand remote: remote, command: "docker rm -f demo"
                     } catch (err) {
 
                     }
