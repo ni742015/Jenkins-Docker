@@ -1,8 +1,5 @@
 FROM node:9.6.0
 
-RUN apt-get update
-RUN apt-get install vim -y
-
 RUN npm install -g pm2 --registry=https://registry.npm.taobao.org
 
 ARG PRO_ENV=test
