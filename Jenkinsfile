@@ -48,7 +48,7 @@ node {
                 def obj = jsonSlurper.parseText(str)
 
                 env.registryName = obj.registryName
-                envConifg = obj.env[env.PRO_ENV]
+                def envConifg = obj.env[env.PRO_ENV]
                 
                 echo "envConifg: ${envConifg}"
 
