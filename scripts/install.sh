@@ -4,7 +4,7 @@ pwd
 npm config set registry https://registry.npm.taobao.org
 
 echo "Install Server"
-cd ../server
+cd ./server
 npm install
 
 cd ..
