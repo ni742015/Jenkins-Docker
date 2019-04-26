@@ -59,7 +59,6 @@ node {
                 echo "VERSION: ${env.VERSION} ${imageName}"
             }
             
-            sh 'ls'
         }
 
         stage('Install'){
