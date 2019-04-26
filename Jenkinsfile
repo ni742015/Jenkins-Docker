@@ -15,7 +15,7 @@ node {
     env.VERSION = '1.0.0'
     env.credentialsId = ''
     env.host = ''
-    def registryName = ''
+    env.registryName = ''
     def imageName = ''
     def input_result // 用户输入项
 
@@ -47,18 +47,21 @@ node {
                 def jsonSlurper = new JsonSlurper()
                 def obj = jsonSlurper.parseText(str)
 
-                registryName = obj.registryName
+                env.registryName = obj.registryName
                 envConifg = obj.env[env.PRO_ENV]
                 
+                echo "envConifg: ${envConifg}"
+
                 env.VERSION = obj.version
                 env.credentialsId = envConifg.credentialsId
                 env.host = envConifg.host
 
-                imageName = "${registryName}:${env.VERSION}_${env.PRO_ENV}_${BUILD_NUMBER}"
+                imageName = "${env.registryName}:${env.VERSION}_${env.PRO_ENV}_${BUILD_NUMBER}"
 
                 echo "VERSION: ${env.VERSION} ${imageName}"
             }
             
+            sh 'ls'
         }
 
         stage('Install'){
@@ -83,7 +86,7 @@ node {
             if(input_result.deploy) {
                 def customImage = docker.build(imageName, "--build-arg PRO_ENV=${env.PRO_ENV} .")
 
-                docker.withRegistry("https://${registryName}", 'docker-demo') {
+                docker.withRegistry("https://${env.registryName}", 'docker-demo') {
                     /* Push the container to the custom Registry */
                     customImage.push()
                 }
