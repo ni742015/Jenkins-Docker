@@ -97,7 +97,7 @@ node {
             if(input_result.deploy) {
                 // wechat服务器
                 withCredentials([usernamePassword(credentialsId: env.credentialsId, usernameVariable: 'USER', passwordVariable: 'PWD')]) {
-                    def otherArgs = '-p 10001:10001' // 区分不同环境的启动参数
+                    def otherArgs = '-p 8001:8001' // 区分不同环境的启动参数
                     def remote = [:]
                     remote.name = 'ssh-deploy'
                     remote.allowAnyHosts = true
