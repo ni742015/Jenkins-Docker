@@ -1,0 +1,101 @@
+
+> bus-examples-base@0.2.0 dev /Users/yonghuapro/Documents/学习分享/Jenkins-Docker/server
+> bus dev
+
+> Using .babelrc defined in your app root
+ DONE  Compiled successfully in 333ms11:46:10
+
+Log Path:  /Users/yonghuapro/Documents/学习分享/Jenkins-Docker/server/logs
+Mongodb Url:  mongodb://test:test@123.206.25.28:27017/test
+Listening on port 8001
+Open http://localhost:8001/api/swagger-html to get swagger html
+app start success
+Mongoose Connect Success!
+GET /api/user - 90ms
+
+> bus-examples-base@0.2.0 dev /Users/yonghuapro/Documents/学习分享/Jenkins-Docker/server
+> bus dev
+
+> Using .babelrc defined in your app root
+ DONE  Compiled successfully in 299ms11:48:30
+
+Log Path:  /Users/yonghuapro/Documents/学习分享/Jenkins-Docker/server/logs
+Log Path:  /Users/yonghuapro/Documents/学习分享/Jenkins-Docker/server/logs
+Mongodb Url:  mongodb://test:test@123.206.25.28:27017/test
+Mongodb Url:  mongodb://test:test@123.206.25.28:27017/test
+Listening on port 8001
+Open http://localhost:8001/api/swagger-html to get swagger html
+app start success
+Error: { Error: listen EADDRINUSE: address already in use :::8001
+    at Server.setupListenHandle [as _listen2] (net.js:1290:14)
+    at listenInCluster (net.js:1338:12)
+    at Server.listen (net.js:1425:7)
+    at Promise (/Users/yonghuapro/Documents/学习分享/Jenkins-Docker/server/node_modules/bus-core/index.js:1:10689)
+    at new Promise (<anonymous>)
+    at e.exports (/Users/yonghuapro/Documents/学习分享/Jenkins-Docker/server/node_modules/bus-core/index.js:1:10095)
+    at e.exports.o [as start] (/Users/yonghuapro/Documents/学习分享/Jenkins-Docker/server/node_modules/bus-core/index.js:1:7988)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:745:11)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:743:3)
+  code: 'EADDRINUSE',
+  errno: 'EADDRINUSE',
+  syscall: 'listen',
+  address: '::',
+  port: 8001 }
+Port 8001 is already in use
+Mongoose Connect Success!
+
+> bus-examples-base@0.2.0 dev /Users/yonghuapro/Documents/学习分享/Jenkins-Docker/server
+> bus dev
+
+> Using .babelrc defined in your app root
+ DONE  Compiled successfully in 287ms11:49:04
+
+Log Path:  /Users/yonghuapro/Documents/学习分享/Jenkins-Docker/server/logs
+Log Path:  /Users/yonghuapro/Documents/学习分享/Jenkins-Docker/server/logs
+Log Path:  /Users/yonghuapro/Documents/学习分享/Jenkins-Docker/server/logs
+Mongodb Url:  mongodb://test:test@123.206.25.28:27017/test
+Mongodb Url:  mongodb://test:test@123.206.25.28:27017/test
+Mongodb Url:  mongodb://test:test@123.206.25.28:27017/test
+Listening on port 8001
+Open http://localhost:8001/api/swagger-html to get swagger html
+app start success
+Error: { Error: listen EADDRINUSE: address already in use :::8001
+    at Server.setupListenHandle [as _listen2] (net.js:1290:14)
+    at listenInCluster (net.js:1338:12)
+    at Server.listen (net.js:1425:7)
+    at Promise (/Users/yonghuapro/Documents/学习分享/Jenkins-Docker/server/node_modules/bus-core/index.js:1:10689)
+    at new Promise (<anonymous>)
+    at e.exports (/Users/yonghuapro/Documents/学习分享/Jenkins-Docker/server/node_modules/bus-core/index.js:1:10095)
+    at e.exports.o [as start] (/Users/yonghuapro/Documents/学习分享/Jenkins-Docker/server/node_modules/bus-core/index.js:1:7988)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:745:11)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:743:3)
+  code: 'EADDRINUSE',
+  errno: 'EADDRINUSE',
+  syscall: 'listen',
+  address: '::',
+  port: 8001 }
+Port 8001 is already in use
+Error: { Error: listen EADDRINUSE: address already in use :::8001
+    at Server.setupListenHandle [as _listen2] (net.js:1290:14)
+    at listenInCluster (net.js:1338:12)
+    at Server.listen (net.js:1425:7)
+    at Promise (/Users/yonghuapro/Documents/学习分享/Jenkins-Docker/server/node_modules/bus-core/index.js:1:10689)
+    at new Promise (<anonymous>)
+    at e.exports (/Users/yonghuapro/Documents/学习分享/Jenkins-Docker/server/node_modules/bus-core/index.js:1:10095)
+    at e.exports.o [as start] (/Users/yonghuapro/Documents/学习分享/Jenkins-Docker/server/node_modules/bus-core/index.js:1:7988)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:745:11)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:743:3)
+  code: 'EADDRINUSE',
+  errno: 'EADDRINUSE',
+  syscall: 'listen',
+  address: '::',
+  port: 8001 }
+Port 8001 is already in use
+Mongoose Connect Success!
+GET /api/user - 109ms

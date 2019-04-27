@@ -2,7 +2,8 @@ echo "Start Run Test"
 pwd
 
 cd ./server
-npm run dev
+nohup npm run dev &
+sleep 5s
 npm run test
 
 cd ..
