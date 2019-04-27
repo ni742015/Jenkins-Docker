@@ -3,7 +3,7 @@ const baseCfg = {
     port: 8001,
     apiPrefix: 'api',
     mongodb: {
-        url: 'mongodb://test:test@localhost:27017/test',
+        url: 'mongodb://test:test@123.206.25.28:27017/test',
         options: {
             useNewUrlParser: true,
             poolSize: 10
