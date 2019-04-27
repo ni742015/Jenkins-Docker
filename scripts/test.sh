@@ -1,7 +1,7 @@
 echo "Start Run Test"
 pwd
 
-cd ../server
+cd ./server
 npm run test
 
 cd ..
