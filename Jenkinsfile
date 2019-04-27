@@ -16,6 +16,8 @@ node {
     env.credentialsId = ''
     env.host = ''
     env.registryName = ''
+    env.dockerArgs = ''
+
     def imageName = ''
     def input_result // 用户输入项
 
@@ -55,6 +57,7 @@ node {
                 env.VERSION = obj.version
                 env.credentialsId = envConifg.credentialsId
                 env.host = envConifg.host
+                env.dockerArgs = envConifg.dockerArgs
 
                 imageName = "${env.registryName}:${env.VERSION}_${env.PRO_ENV}_${BUILD_NUMBER}"
 
@@ -97,24 +100,19 @@ node {
             if(input_result.deploy) {
                 // wechat服务器
                 withCredentials([usernamePassword(credentialsId: env.credentialsId, usernameVariable: 'USER', passwordVariable: 'PWD')]) {
-                    def otherArgs = '-p 8001:8001' // 区分不同环境的启动参数
                     def remote = [:]
                     remote.name = 'ssh-deploy'
                     remote.allowAnyHosts = true
                     remote.host = env.host
                     remote.user = USER
                     remote.password = PWD
-                
-                    if(env.PRO_ENV == "pro") {
-                        otherArgs = '-p 3000:3000'
-                    }
 
                     try {
                         sshCommand remote: remote, command: "docker rm -f demo"
                     } catch (err) {
 
                     }
-                    sshCommand remote: remote, command: "docker run -d --name demo -v /etc/localtime:/etc/localtime -e PRO_ENV='${env.PRO_ENV}' ${otherArgs} ${imageName}"
+                    sshCommand remote: remote, command: "docker run -d --name demo -v /etc/localtime:/etc/localtime -e PRO_ENV='${env.PRO_ENV}' ${env.dockerArgs} ${imageName}"
                 }
 
                 // 删除旧的镜像
